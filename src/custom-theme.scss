@@ -1,0 +1,58 @@
+@import '../node_modules/@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$md-primaryflashcards: (
+  50 : #eae2e7,
+  100 : #cab6c4,
+  200 : #a7869c,
+  300 : #845674,
+  400 : #693157,
+  500 : #4f0d39,
+  600 : #480b33,
+  700 : #3f092c,
+  800 : #360724,
+  900 : #260317,
+  A100 : #ff61b0,
+  A200 : #ff2e96,
+  A400 : #fa007d,
+  A700 : #e00070,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://www.google.com/design/spec/style/color.html
+$flashcards-app-primary: mat-palette($md-primaryflashcards);
+$flashcards-app-accent: mat-palette($mat-gray);
+
+// The warn palette is optional (defaults to red).
+$flashcards-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$flashcards-app-theme: mat-dark-theme($flashcards-app-primary, $flashcards-app-accent, $flashcards-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($flashcards-app-theme);
